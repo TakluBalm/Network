@@ -27,7 +27,7 @@ int main(){
 
         while(arr1[i] <= arr2[j]){
             i++;
-            if(i == n1) goto leave;
+            if(i == n1)	goto leave;
             if (arr1[i] == arr2[j]){
                 count++;
                 printf("%d) %s\n", count, search_hash(NULL, arr1[i], hash, HASH_SIZE)->name);
@@ -35,7 +35,7 @@ int main(){
         }
         while(arr2[j] <= arr1[i]){
             j++;
-            if (j == n2) goto leave;
+            if(j == n2)	goto leave;
             if (arr1[i] == arr2[j]){
                 count++;
                 printf("%d) %s\n", count, search_hash(NULL, arr1[i], hash, HASH_SIZE)->name);

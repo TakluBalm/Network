@@ -14,18 +14,10 @@ ID* search_hash(char* name, int number, node** hash, int size_of_hash){
 
 void free_list(node* list){
     if (list == NULL) return;
-    while(list->next != NULL){
-        node* current = list;
-        node* prev = NULL;
-        while(current->next != NULL){
-            prev = current;
-            current = current->next;
-        }
-        prev->next = NULL;
-        free(current->id->friends);free(current->id); free(current);
-    }
-    free(list->id->friends);free(list->id); free(list);
-    return;
+	node* next = list->next;
+	free(list->id);
+	free(list);
+	free_list(next);
 }
 
 void free_hash(node** hash, int size_of_hash){

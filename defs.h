@@ -35,5 +35,8 @@ ID* search_hash(char* name, int number, node** hash, int size_of_hash);
 void free_list(node* list);
 void free_hash(node** hash, int size_of_hash);
 
+#include "extrafuncs.c"
+#include "loading.c"
+#include "srchnunld.c"
 
 #endif
