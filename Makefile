@@ -1,12 +1,10 @@
 CC=gcc
-FLAGS=-Wall -Werror
+FLAGS=-g
 TRASH=*.o *.out
+FILES=*.c
 
-all: *.o
-	$(CC) $(FLAGS) $^;
-
-%.o: %.c
-	$(CC) $(FLAGS) -c $^;
+network: $(FILES)
+	$(CC) $(FLAGS) $(FILES) -o network;
 
 remove:
 	rm $(TRASH)

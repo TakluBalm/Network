@@ -60,7 +60,8 @@ int load_friends(char* __filename, node** hash,int size_of_hash){
 		int max = -1;
 
 		// Putting 2 in friend-list of 1
-		int *new1 = calloc(n1 + 1,sizeof(int)), *old1 = id1->friends;
+		int *new1 = calloc(n1 + 1,sizeof(int));
+		int *old1 = id1->friends;
 		for (int i = 0; i < n1; i++){
 			if(old1[i] < id2->number){
 				new1[i] = old1[i];
@@ -74,6 +75,7 @@ int load_friends(char* __filename, node** hash,int size_of_hash){
 		id1->friends = new1;
 
 		// Putting 1 in friend-list of 2
+		max = -1;
 		int *new2 = calloc(n2 + 1, sizeof(int));
 		int *old2 = id2->friends;
 		for (int i = 0; i < n2; i++){
@@ -91,5 +93,6 @@ int load_friends(char* __filename, node** hash,int size_of_hash){
 		// Increasing count
 		friendships++;
 	}
+	stdin = temp;
 	return friendships;
 }
